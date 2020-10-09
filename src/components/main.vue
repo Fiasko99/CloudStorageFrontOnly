@@ -56,12 +56,8 @@
                     </div>
                 </div>
             </transition> -->
-            <form action="../php/getFile.php" method="post" enctype="multipart/form-data">
-                <p>Изображения:
-                    <input type="file" name="file[]" />
-                    <input type="submit" value="Отправить" />
-                </p>
-            </form>
+            <input type="file" id="file" ref="file" />
+            <button type="button" @click='uploadFile()' >Upload file</button>
         </div>
     </div>
   </div>
@@ -87,21 +83,33 @@
         handleFileUpload(){
             this.file = this.$refs.file.files[0];
         },
-        submitFile() {
+        uploadFile() {
+            this.file = this.$refs.file.files[0];
+
             let formData = new FormData();
             formData.append('file', this.file);
-            this.$axios.post(
-                '../php/getFile.php',
-                formData
-            ).then(function(){
-                alert("Файл сохранён!")
-                this.addFile = !this.addFile;
-            }).catch(function(){
-                alert("Непредвиденная ошибка!")
+
+            this.$axios.post('ajaxfile.php', formData,
+            {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
+            .then(function (response) {
+
+                if(!response.data){
+                    alert('File not uploaded.');
+                }else{
+                    alert('File uploaded successfully.');
+                }
+
+            })
+            .catch(function (error) {
+                console.log(error);
             });
-        }
+        },
     }
-};
+ }
 </script>
 
 <style>
