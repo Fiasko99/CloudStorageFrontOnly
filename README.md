@@ -1,6 +1,15 @@
 # lb3
 
 > A Vue.js project
+#create project
+vue init webpack lb3
+Y
+most users
+n
+n
+n
+n
+npm
 
 ## Build Setup
 
