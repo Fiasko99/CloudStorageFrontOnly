@@ -1,30 +1,9 @@
-# lb3
+# Облачное хранилище
 
-> A Vue.js project
-#create project
-vue init webpack lb3
-Y
-most users
-n
-n
-n
-n
-npm
+Описание: облачное хранилище для хранения и управляния сохраненными файлами в рамках пользователя. 
+Для реализации приложения использовались фрагменты php кода, интегрированные в фреймворк Vue.
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# Как запустить
+- Установить NodeJs
+- Выполнить команду `npm i`
+- Выполнить команду `npm run serve`
